@@ -1,0 +1,32 @@
+.image {
+
+height: 200px;
+width: 250px;
+background-color: lightblue;
+overflow: visible; /* Allows the image to extend outside the .image div */
+display: flex; /* Centers the image */
+align-items: center;
+justify-content: center;
+position: relative; /* Needed for z-index to work */
+transition: box-shadow 0.3s ease; /* Smooth shadow animation */
+}
+
+.image img {
+height: 100%; /* Ensures the image fits the container initially */
+width: 100%;  /* Keeps the aspect ratio consistent */
+object-fit: cover; /* Crops the image to fill the space without distortion */
+transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.image:hover img {
+transform: scale(1.2); /* Enlarges the image to 120% */
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Adds shadow for lifted effect */
+z-index: 10; /* Brings the image above other elements */
+}
+
+.container {
+display: grid;
+grid-template-columns: repeat(4, 250px); /* 4 columns with fixed width */
+gap: 20px; /* Adds space between images */
+position: relative; /* Ensures the grid layout is intact */
+}
